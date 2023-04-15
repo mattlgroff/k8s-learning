@@ -23,3 +23,9 @@ We are going to set up ingress-nginx in our local environment and GC
 Ingress routing rules to get traffic to services. Controller for our ingress. Pod running nginx that handles routing.
 
 
+`ingress-nginx` project gives us Sticky Sessions, a if a user sends 2 request they go to the same pod. This is not a feature of kubernetes, but a feature of `ingress-nginx`. It's a feature of the ingress controller. It bypasses ClusterIP for that reason. It has other features but this is a big one
+
+After applying the `ingress-service.yaml` if you have Docker Desktop the client URL will be `https://kubernetes.docker.internal/` and the server URL will be `https://kubernetes.docker.internal/api`
+
+These use a "Kubernetes Ingress Controller Fake Certificate"
+
